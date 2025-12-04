@@ -1,80 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Santa Table Tennis Set – Serve Up Some Holiday Cheer!</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Santa Table Tennis — Smash, Hang, & Ho‑Ho‑Ho!</title>
+  <meta name="description" content="Santa Table Tennis Set — decorative wall art that doubles as a ready-to-play racket. Perfect Christmas gift and party piece." />
+  <link rel="stylesheet" href="globals.css" />
 </head>
-
 <body>
-    <header class="navbar">
-        <div class="logo">🎅 Santa Ping-Pong</div>
-        <nav>
-            <a href="#concept">Concept</a>
-            <a href="#features">Features</a>
-            <a href="#unique">Why Unique</a>
-            <a href="#buy">Buy</a>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <h1>Santa Table Tennis</h1>
+        <p class="tagline">Smash, Hang, &amp; Ho‑Ho‑Ho!</p>
+      </div>
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="#features">Features</a>
+        <a href="#demo">Interactive Demo</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#buy" class="cta">Preorder</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Serve Up Some Holiday Cheer!</h1>
-            <p>The festive table tennis set that brings laughter, play, and Christmas spirit into your home.</p>
-            <button class="cta-btn" onclick="scrollToBuy()">Shop the Set</button>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h2>Bring a playful spin to your holidays.</h2>
+          <p>Santa Table Tennis is a dual-purpose piece of festive design: a decorative wall display that becomes a full, tournament-capable racket when you take it down. Perfect for families, office parties, and unforgettable gifts.</p>
+          <div class="hero-actions">
+            <a href="#demo" class="btn">Try the demo</a>
+            <a href="#buy" class="btn btn-outline">Preorder now</a>
+          </div>
+
+          <ul class="feature-list" aria-hidden="false">
+            <li>Dual-purpose design: wall art + playable racket</li>
+            <li>Festive, conversation-starting silhouette</li>
+            <li>Quick wall mount with magnetic or hook option</li>
+          </ul>
         </div>
-        <div class="hero-img"></div>
-    </section>
 
-    <!-- Concept Section -->
-    <section id="concept" class="section fade-in">
-        <h2>The Concept</h2>
-        <p>Our product pairs a table tennis racket with a wall-mounted holder in a clever, Christmas-themed design. 
-        Each racket features Santa’s face, while the holder represents Santa’s beard. When placed together, they form a full, 
-        festive Santa that doubles as wall art and a ready-to-play paddle!</p>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="wall">
+            <div id="holder" class="holder" tabindex="0" aria-label="Santa beard holder" title="Drop the racket here to hang">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='220'><rect width='100%' height='100%' fill='%23fff'/></svg>" alt=""/>
+            </div>
 
-        <div class="concept-img-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Table_tennis_racket_and_ball.svg/800px-Table_tennis_racket_and_ball.svg.png" alt="Racket Example">
-            <div class="holder-shape">🧔</div>
+            <div id="racket" class="racket" draggable="true" role="img" aria-label="Santa racket - drag to hang">
+              <div class="racket-face">
+                <span class="eyes">◕ ◕</span>
+                <span class="nose">●</span>
+                <span class="smile">☻</span>
+              </div>
+            </div>
+
+            <div class="sparkles" aria-hidden="true"></div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="section darker fade-in">
-        <h2>Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-card"> 🎄 Dual-purpose: Decoration + Paddle </div>
-            <div class="feature-card"> 😂 Fun & festive Christmas design </div>
-            <div class="feature-card"> 🔧 Easy to mount & store </div>
-            <div class="feature-card"> 🎁 Perfect gift for all ages </div>
+    <section id="features" class="container features">
+      <h3>Key Features</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>Dual-purpose design</h4>
+          <p>Mount it on the wall and the holder completes Santa's beard — take it down and you have a competition-ready racket.</p>
+        </article>
+        <article class="card">
+          <h4>Festive &amp; Fun</h4>
+          <p>Hand-sketched art meets functional sports gear. Great for decorations and party games.</p>
+        </article>
+        <article class="card">
+          <h4>Easy to install</h4>
+          <p>Mounting options include a low-profile hook or magnetic plate for quick hang-and-play.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="demo" class="demo container">
+      <h3>Interactive Demo</h3>
+      <p>Drag the racket onto the Santa beard holder (or use the keyboard) to complete the image and hear Santa's jolly chime.</p>
+
+      <div class="demo-area">
+        <div class="instructions" id="announce" aria-live="polite">Ready — drag the racket or press <kbd>Enter</kbd> while the holder is focused.</div>
+        <div class="stage">
+          <div id="demo-holder" class="demo-holder" tabindex="0" aria-label="Demo holder for racket">
+            <div class="beard">Santa's Beard</div>
+          </div>
+
+          <div id="demo-racket" class="demo-racket" draggable="true" role="button" aria-pressed="false" aria-label="Demo racket, draggable">
+            <div class="face">🎅</div>
+          </div>
         </div>
-    </section>
 
-    <!-- Unique Section -->
-    <section id="unique" class="section fade-in">
-        <h2>Why It’s Unique</h2>
-        <p>Unlike standard table tennis accessories, this set combines festive charm with playful functionality. 
-        It's a conversation starter, a Christmas decoration, and a fully usable table tennis set – all in one.</p>
-    </section>
-
-    <!-- Buy Section -->
-    <section id="buy" class="section dark fade-in">
-        <h2>Smash, Hang, & Ho-Ho-Ho!</h2>
-        <p class="tagline">The ultimate Christmas gift for families, friends, and office parties.</p>
-
-        <div class="buy-box">
-            <h3>Santa Table Tennis Set</h3>
-            <p>Only <span class="price">$29.99</span> this holiday season.</p>
-            <button class="cta-btn large">Pre-Order Now</button>
+        <div class="demo-controls">
+          <button id="resetBtn" class="btn btn-small">Reset</button>
+          <button id="spinBtn" class="btn btn-small">Spin Serve</button>
+          <label class="switch"><input type="checkbox" id="soundToggle" checked /> Sound</label>
         </div>
+      </div>
     </section>
 
-    <footer>
-        <p>© 2025 Santa Ping-Pong – Designed for a college project 🎅</p>
-    </footer>
+    <section id="gallery" class="gallery container">
+      <h3>Gallery</h3>
+      <div class="gallery-grid" role="list">
+        <figure role="listitem"><img src="https://images.unsplash.com/photo-1544213456-b5f2f1d9f5c4?q=80&w=800&auto=format&fit=crop" alt="Holiday party with ping pong"/><figcaption>At-home holiday ping-pong fun.</figcaption></figure>
+        <figure role="listitem"><img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop" alt="Decorative racket on wall"/><figcaption>Neat storage that decorates.</figcaption></figure>
+        <figure role="listitem"><img src="https://images.unsplash.com/photo-1545177962-2bb3e5b1f2bd?q=80&w=800&auto=format&fit=crop" alt="Close-up of racket face"/><figcaption>Play-ready, premium rubber surface.</figcaption></figure>
+      </div>
+    </section>
 
-<script src="scripts.js"></script>
+    <section id="buy" class="container buy">
+      <h3>Where to get one</h3>
+      <p>For this college demo we show a preorder flow. Replace with your store details when ready.</p>
+      <form id="preorder" class="preorder" aria-label="Preorder form">
+        <div class="form-row">
+          <label for="name">Full name</label>
+          <input id="name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required />
+        </div>
+        <div class="form-row">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" type="number" name="quantity" min="1" value="1" />
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Preorder — Limited Run</button>
+          <button id="demoPurchase" class="btn btn-outline" type="button">Simulate Purchase</button>
+        </div>
+        <p class="fine-print">By preordering you agree to the student demo terms. No payment processed.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Santa Table Tennis — College Project • Built with ❤️ for holiday cheer</p>
+      <div class="foot-links">
+        <a href="#">Privacy</a>
+        <a href="#">Design Notes</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
