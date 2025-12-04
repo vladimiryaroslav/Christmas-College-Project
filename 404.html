@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Page Not Found</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #b60000, #ff4e4e);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 600px;
+        padding: 20px;
+        animation: fadeIn 1.2s ease-out;
+    }
+
+    h1 {
+        font-size: 6rem;
+        margin: 0;
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    h2 {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
+
+    p {
+        margin: 20px 0;
+        font-size: 1.2rem;
+    }
+
+    a {
+        display: inline-block;
+        padding: 12px 25px;
+        margin-top: 15px;
+        background: #fff;
+        color: #c50000;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        background: #ffeaea;
+    }
+
+    /* Snow animation */
+    .snowflake {
+        position: fixed;
+        top: -10px;
+        color: white;
+        font-size: 1.2rem;
+        user-select: none;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(110vh) rotate(360deg); opacity: 0.6; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>404</h1>
+    <h2>Oh Deer! Page Not Found 🎄</h2>
+    <p>Looks like this page wandered off with Santa’s reindeer.  
+       Let’s get you back to somewhere cozy.</p>
+    <a href="/">Return Home</a>
+</div>
+
+<script>
+// Generate animated snowflakes
+const snowflakes = 40;
+for (let i = 0; i < snowflakes; i++) {
+    let flake = document.createElement("div");
+    flake.className = "snowflake";
+    flake.textContent = "❄";
+    flake.style.left = Math.random() * 100 + "vw";
+    flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+    flake.style.opacity = 0.5 + Math.random() * 0.5;
+    flake.style.fontSize = 15 + Math.random() * 20 + "px";
+    document.body.appendChild(flake);
+}
+</script>
+
+</body>
+</html>
