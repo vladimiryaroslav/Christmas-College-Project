@@ -1,76 +1,70 @@
-const demoRacket = document.getElementById('demo-racket');
-const demoHolder = document.getElementById('demo-holder');
-const resetBtn = document.getElementById('resetBtn');
-const spinBtn = document.getElementById('spinBtn');
-const soundToggle = document.getElementById('soundToggle');
-const announce = document.getElementById('announce');
-const preorder = document.getElementById('preorder');
+(function(){
+const body = document.querySelector('.page');
+const toggle = document.getElementById('toggleHang');
+const peek = document.getElementById('peek');
+const racketBtn = document.getElementById('racket');
+const shopNow = document.getElementById('shopNow');
+const giftThis = document.getElementById('giftThis');
 
-let isHung = false;
 
-// Play chime
-function playChime(){
-  if(!soundToggle.checked) return;
-  const ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
-  osc.type = "sine";
-  osc.frequency.value = 880;
-  gain.gain.value = 0.001;
-  osc.connect(gain); gain.connect(ctx.destination);
-  osc.start();
-  osc.frequency.exponentialRampToValueAtTime(660, ctx.currentTime + 0.4);
-  setTimeout(()=>ctx.close(), 1000);
+function setHung(hung){
+if(hung){
+document.documentElement.classList.add('hung');
+body.classList.add('hung');
+racketBtn.setAttribute('aria-pressed','true');
+} else {
+document.documentElement.classList.remove('hung');
+body.classList.remove('hung');
+racketBtn.setAttribute('aria-pressed','false');
+}
 }
 
-// Drag support
-demoRacket.addEventListener('dragstart', e=>{
-  e.dataTransfer.setData('text/plain', 'demo-racket');
-});
-demoHolder.addEventListener('dragover', e=>{
-  e.preventDefault();
-});
-demoHolder.addEventListener('drop', ()=>{
-  hang();
-});
 
-demoHolder.addEventListener('keydown', e=>{
-  if(e.key === "Enter"){
-    hang();
-  }
-});
+// Toggle hang state
+toggle.addEventListener('click',()=>{
+const isHung = body.classList.contains('hung');
+setHung(!isHung);
 
-function hang(){
-  if(isHung) return;
-  isHung = true;
-  demoRacket.classList.add("hung");
-  demoHolder.classList.add("holder-complete");
-  announce.textContent = "Santa is complete! Ho-Ho-Ho!";
-  playChime();
+
+// small playful sound simulation via visual bounce
+if(!isHung){
+racketBtn.animate([{transform:'translateY(-4px)'},{transform:'translateY(0)'}],{duration:260});
 }
-
-resetBtn.addEventListener('click', ()=>{
-  isHung = false;
-  demoHolder.classList.remove("holder-complete");
-  demoRacket.classList.remove("hung");
-  announce.textContent = "Reset — drag or press Enter again.";
 });
 
-spinBtn.addEventListener('click', ()=>{
-  demoRacket.animate([
-    { transform: "rotate(0deg)" },
-    { transform: "rotate(720deg)" }
-  ], { duration: 900 });
-  playChime();
+
+// clicking racket toggles too
+racketBtn.addEventListener('click',(e)=>{
+e.preventDefault();
+const isHung = body.classList.contains('hung');
+setHung(!isHung);
 });
 
-// Preorder simulation
-preorder.addEventListener("submit", e=>{
-  e.preventDefault();
-  announce.textContent = "Preorder simulated! Check your email for updates.";
+
+// peek — quick reveal without toggling permanently
+peek.addEventListener('click',()=>{
+setHung(true);
+setTimeout(()=>setHung(false),1200);
 });
 
-// Purchase confirmation
-document.getElementById("demoPurchase").addEventListener("click", ()=>{
-  announce.textContent = "Thanks! Purchase simulation complete.";
+
+// CTAs — simple smooth scroll stubs for demo
+function smoothTo(hash){
+const target = document.querySelector(hash);
+if(target) target.scrollIntoView({behavior:'smooth'});
+}
+shopNow.addEventListener('click',(e)=>{e.preventDefault();smoothTo('#features');});
+giftThis.addEventListener('click',(e)=>{e.preventDefault();smoothTo('#gift');});
+
+
+// Small accessibility: allow keyboard Enter on racket
+racketBtn.addEventListener('keydown',(e)=>{
+if(e.key==='Enter' || e.key===' '){
+e.preventDefault(); racketBtn.click();
+}
 });
+
+
+// initial state
+setHung(false);
+})();
