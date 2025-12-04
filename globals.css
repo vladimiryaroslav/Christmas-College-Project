@@ -1,96 +1,33 @@
-:root{
-  --bg: #fff6f6;
-  --card:#ffffff;
-  --muted:#5b5b5b;
-  --accent:#d62828; /* Christmas red */
-  --accent-2:#2a9d8f; /* Pine green */
-  --gold:#f4b942;
-  --radius:16px;
-  --container:1100px;
-  --shadow:0 8px 28px rgba(0,0,0,0.08);
-  font-family: Inter, system-ui, sans-serif;
+/* globals.css — bold Christmas palette, playful typography & small animations */
+.feature-text span{color:var(--muted)}
+
+
+/* Unique */
+.unique{padding:24px 0}
+.lifestyle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.photo.mock{height:120px;border-radius:12px;background:linear-gradient(90deg,#ffdede,#fff6f6);display:grid;place-items:center;font-weight:700;color:var(--red)}
+
+
+/* Tagline */
+.tag-banner{background:linear-gradient(90deg,#ffefef,#f2fff4);padding:20px;border-radius:16px;display:flex;justify-content:space-between;align-items:center}
+.santa-swing{font-size:32px;animation:swing 900ms ease-in-out infinite alternate}
+@keyframes swing{from{transform:translateX(0) rotate(-6deg)}to{transform:translateX(6px) rotate(6deg)}}
+
+
+/* Footer */
+.site-footer{padding:20px 0;background:linear-gradient(180deg, rgba(46,125,50,0.03), transparent)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-inner a{color:var(--muted);text-decoration:none;margin-right:12px}
+.social{position:relative}
+.social:hover{color:var(--red)}
+
+
+/* Responsive adjustments */
+@media (max-width:900px){
+.hero-inner{flex-direction:column-reverse}
+.racket-svg{width:140px;height:140px}
 }
 
-/* Falling Snow Overlay */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:url('https://i.imgur.com/5vKQFvG.png');
-  background-size:300px;
-  opacity:0.25;
-  pointer-events:none;
-  animation:snow 18s linear infinite;
-  z-index:0;
-}
-@keyframes snow{
-  from{background-position:0 0;}
-  to{background-position:0 1000px;}
-}
 
-body{
-  margin:0;
-  background:linear-gradient(180deg,#fffdfd,var(--bg));
-  color:#111;
-}
-
-.container{max-width:var(--container);margin:auto;padding:28px;position:relative;z-index:1}
-
-/* HEADER */
-.site-header{
-  background:linear-gradient(90deg, rgba(214,40,40,0.15), rgba(42,157,143,0.15));
-  border-bottom:2px solid rgba(214,40,40,0.15);
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
-}
-
-.nav a.cta{
-  background:var(--accent);
-  color:#fff;
-  border:2px solid var(--gold);
-  box-shadow:0 0 12px rgba(244,185,66,0.5);
-}
-
-/* HERO */
-.holder{
-  border:6px solid var(--accent);
-  background:linear-gradient(180deg,#fff, #ffeaea);
-  box-shadow:0 10px 22px rgba(214,40,40,0.15);
-}
-
-.racket{
-  background:linear-gradient(180deg,#fff8f8,#fff);
-  border:6px solid var(--accent);
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-/* Candy-cane borders */
-.card, .demo-area, .gallery-grid img, .preorder{
-  border:4px solid transparent;
-  border-image: repeating-linear-gradient(45deg, var(--accent), var(--accent) 10px, white 10px, white 20px) 6;
-}
-
-/* Buttons */
-.btn{
-  background:var(--accent);
-  color:white;
-  padding:10px 16px;
-  border-radius:10px;
-  font-weight:700;
-}
-
-/* FOOTER */
-.site-footer{
-  background:linear-gradient(180deg,rgba(214,40,40,0.06),rgba(42,157,143,0.06));
-  border-top:2px solid var(--accent-2);
-  padding:22px 0;
-  margin-top:40px;
-}
-
-/* Completed state */
-.hung{
-  transform:translate(-6px,-34px) rotate(-6deg) scale(0.9)!important;
-}
-.holder-complete{
-  border-color:var(--accent-2);
-  box-shadow:0 8px 30px rgba(42,157,143,0.3);
-}
+/* small accessibility focus states */
+button:focus, a:focus{outline:3px solid rgba(198,40,40,0.18);outline-offset:3px}
