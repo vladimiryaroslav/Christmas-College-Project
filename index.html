@@ -1,48 +1,433 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Santa Table Tennis Set — Serve Up Some Holiday Cheer!</title>
-<meta name="description" content="Serve Up Some Holiday Cheer! A playful table tennis set that doubles as festive wall art.">
-<link rel="stylesheet" href="globals.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Santa Table Tennis Set - Smash, Hang, & Ho-Ho-Ho! The perfect festive table tennis set that doubles as Christmas decoration.">
+    <title>Santa Table Tennis Set - Serve Up Some Holiday Cheer!</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="page">
-<header class="site-header">
-<div class="container header-inner">
-<h1 class="brand">Santa Table Tennis</h1>
-<nav class="nav">
-<a href="#shop">Shop</a>
-<a href="#story">About</a>
-<a href="#faq">FAQs</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
-</header>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🎅</span>
+                <span class="logo-text">Santa Ping Pong</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#product" class="nav-link">Product</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="snow-container"></div>
+            <div class="hero-particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Serve Up Some</span>
+                    <span class="title-line highlight">Holiday Cheer!</span>
+                </h1>
+                <p class="hero-subtitle">The Santa Table Tennis Set</p>
+                <p class="hero-description">A playful, interactive way to celebrate Christmas with friends and family. Decorative wall art meets functional table tennis equipment.</p>
+                <div class="hero-tagline">
+                    <span class="tagline-text">"Smash, Hang, & Ho-Ho-Ho!"</span>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('product')">
+                        <span>Explore Product</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('features')">
+                        <span>Learn More</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="santa-racket-container">
+                    <div class="racket-holder" id="racketHolder">
+                        <div class="beard-design"></div>
+                        <div class="holder-mount"></div>
+                    </div>
+                    <div class="racket" id="racket">
+                        <div class="racket-face">
+                            <div class="santa-eyes">
+                                <div class="eye left"></div>
+                                <div class="eye right"></div>
+                            </div>
+                            <div class="santa-nose"></div>
+                            <div class="santa-mouth"></div>
+                            <div class="santa-hat">
+                                <div class="hat-pom"></div>
+                            </div>
+                        </div>
+                        <div class="racket-handle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow"></div>
+        </div>
+    </section>
 
-<main>
-<!-- HERO -->
-<section class="hero" id="hero" aria-label="Hero — Serve Up Some Holiday Cheer">
-<div class="container hero-inner">
-<div class="hero-copy">
-<h2 class="headline">Serve Up Some Holiday Cheer!</h2>
-<p class="subhead">A playful, interactive way to bring Christmas fun to your home.</p>
-<div class="cta-row">
-<a class="btn primary" id="shopNow" href="#shop">Shop Now</a>
-<a class="btn ghost" id="giftThis" href="#gift">Gift This Set</a>
-</div>
-<p class="mini">Includes racket + wall-mounted beard holder. Packaged for gifting 🎁</p>
-</div>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">Why choose the Santa Table Tennis Set?</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Dual-Purpose Design</h3>
+                    <p>Decorative wall art + functional table tennis equipment. Complete the Santa image when you hang the racket!</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="100">
+                    <div class="feature-icon">🎄</div>
+                    <h3>Festive & Fun</h3>
+                    <p>Brings humor and Christmas spirit to any room. A conversation starter that spreads joy throughout the holiday season.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="200">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Easy to Use</h3>
+                    <p>Mount the holder on the wall and store your racket neatly while completing the Santa image. Simple setup, instant fun!</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="300">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Perfect Gift</h3>
+                    <p>Ideal for families, friends, and office Christmas parties. A unique gift that combines playfulness with functionality.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="400">
+                    <div class="feature-icon">✨</div>
+                    <h3>Unique Concept</h3>
+                    <p>Unlike standard table tennis accessories, this set combines play with visual delight, creating a memorable experience.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="500">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Premium Quality</h3>
+                    <p>Built to last with high-quality materials. Enjoy countless games while maintaining the festive decoration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Product Showcase Section -->
+    <section id="product" class="product-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Product</h2>
+                <p class="section-subtitle">See how it works</p>
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-visual">
+                    <div class="product-demo">
+                        <div class="demo-wall">
+                            <div class="wall-texture"></div>
+                        </div>
+                        <div class="demo-holder-mounted">
+                            <div class="demo-beard"></div>
+                            <div class="demo-mount-point"></div>
+                        </div>
+                        <div class="demo-racket" id="demoRacket">
+                            <div class="demo-racket-face">
+                                <div class="demo-eyes">
+                                    <div class="demo-eye"></div>
+                                    <div class="demo-eye"></div>
+                                </div>
+                                <div class="demo-nose"></div>
+                                <div class="demo-mouth"></div>
+                                <div class="demo-hat">
+                                    <div class="demo-pom"></div>
+                                </div>
+                            </div>
+                            <div class="demo-handle"></div>
+                        </div>
+                        <button class="demo-toggle" id="demoToggle">
+                            <span class="toggle-text">Click to Hang</span>
+                            <span class="toggle-icon">↓</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="showcase-info">
+                    <h3>The Concept</h3>
+                    <p>Our product pairs a table tennis racket with a wall-mounted holder in a clever, Christmas-themed design. Each racket features Santa's face, while the holder represents Santa's iconic beard.</p>
+                    <p>When the racket is placed on the holder, it completes the full image of Santa, giving you a charming decoration and a ready-to-play racket in one.</p>
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <span class="spec-label">Material:</span>
+                            <span class="spec-value">Premium Wood & Rubber</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Mounting:</span>
+                            <span class="spec-value">Easy Wall Installation</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Design:</span>
+                            <span class="spec-value">Hand-Painted Details</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Size:</span>
+                            <span class="spec-value">Standard Table Tennis Racket</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="hero-visual" aria-hidden="false">
-<!-- Decorative snow layer -->
-<div class="snow" aria-hidden="true"></div>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-subtitle">See it in action</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in">
+                    <div class="gallery-card">
+                        <div class="gallery-image gallery-1">
+                            <div class="gallery-overlay">
+                                <span class="gallery-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">Wall Mounted Display</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-delay="100">
+                    <div class="gallery-card">
+                        <div class="gallery-image gallery-2">
+                            <div class="gallery-overlay">
+                                <span class="gallery-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">Complete Santa Image</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-delay="200">
+                    <div class="gallery-card">
+                        <div class="gallery-image gallery-3">
+                            <div class="gallery-overlay">
+                                <span class="gallery-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">Ready to Play</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-delay="300">
+                    <div class="gallery-card">
+                        <div class="gallery-image gallery-4">
+                            <div class="gallery-overlay">
+                                <span class="gallery-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">Family Fun</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-delay="400">
+                    <div class="gallery-card">
+                        <div class="gallery-image gallery-5">
+                            <div class="gallery-overlay">
+                                <span class="gallery-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">Office Decor</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-delay="500">
+                    <div class="gallery-card">
+                        <div class="gallery-image gallery-6">
+                            <div class="gallery-overlay">
+                                <span class="gallery-icon">🔍</span>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">Perfect Gift</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-subtitle">Real reviews from happy customers</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"This is the most creative Christmas decoration I've ever seen! My kids love playing with it, and it looks amazing on the wall. Best purchase this holiday season!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">👨</div>
+                                <div class="author-info">
+                                    <div class="author-name">Michael Chen</div>
+                                    <div class="author-role">Family Man</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Perfect for our office Christmas party! Everyone was talking about it, and we had so much fun playing. It's now a permanent fixture in our break room."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">👩</div>
+                                <div class="author-info">
+                                    <div class="author-name">Sarah Johnson</div>
+                                    <div class="author-role">Office Manager</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Gave this as a gift to my brother and he absolutely loved it! The quality is excellent and the design is so clever. Highly recommend!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">👤</div>
+                                <div class="author-info">
+                                    <div class="author-name">David Martinez</div>
+                                    <div class="author-role">Gift Giver</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="testimonialPrev">‹</button>
+                    <div class="testimonial-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                    <button class="testimonial-btn next" id="testimonialNext">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Composite product illustration (SVG + interactive JS) -->
-<div class="product-stage">
-<!-- Wall plaque / beard holder -->
-<div class="beard-holder" id="beardHolder" role="img" aria-label="Santa beard holder">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>hello@santapingpong.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>North Pole Workshop</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🎅</span>
+                        <span class="logo-text">Santa Ping Pong</span>
+                    </div>
+                    <p class="footer-tagline">"Smash, Hang, & Ho-Ho-Ho!"</p>
+                    <p class="footer-description">Bringing festive fun and games to your home this holiday season.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#product">Product</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Santa Ping Pong. All rights reserved. Made with ❤️ for the holidays.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
 </html>
